@@ -73,6 +73,7 @@
 			      <div class="row">
 			      	<div class="col-xs-4"><button type="submit" class="btn btn-primary btn-lg">Login</button></div> <div class="col-xs-4"><button type="button" class="btn btn-primary btn-lg">Register</button></div>
 			      </div>
+                  <div class="row note" id="loginNote"></div>
 			    </form>
 	      </div>
 	    </div>
@@ -165,6 +166,8 @@
 			      <div class="row">
 			      	<div class="col-md-4"><button type="submit" class="btn btn-primary btn-lg btn-block">Login</button></div> <div class="col-md-4"><button type="button" class="btn btn-primary btn-lg btn-block">Register</button></div>
 			      </div>
+                <div class="row note" id="registerNote"></div>
+                    
 			    </form>
 	      </div>
 	    </div>

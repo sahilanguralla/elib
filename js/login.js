@@ -4,14 +4,14 @@ function login(form){
     var rem=form["remember"].checked;
     var par="user="+user+"&pass="+pass+"&rem="+rem;
     var dest="includes/register.inc.php";
-    sendRequest(par,dest,loginResponse);
+    sendRequest("loginNote",par,dest,loginResponse);
 }
 
 var loginResponse=function(response){
     if(response==="true"){
-        notify("Login Successful!");
+        notify("loginNote","Login Successful!","success");
         window.reload();
     }
     else
-        notify(response);
+        notify("registerNote",response,"warning");
 };

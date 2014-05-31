@@ -5,13 +5,13 @@ function register(form){
     var email=form["email"].value;
     var confemail=form["confirmEmail"].value;
     var terms=form["terms"].checked;
-    sendRequest(par,dest,registerResponse);
+    sendRequest("registerNote",par,dest,registerResponse);
 }
 
 var registerResponse=function(response){
-    if(response="true"){
-        notify("Registration Successful! Confirmation requires at about 2 non-working days. Please bear with us.");
+    if(response==="true"){
+        notify("registerNote","Registration Successful! Confirmation requires at about 2 non-working days. Please bear with us.","success");
     }
     else
-        notify(response);
+        notify("registerNote",response,"warning");
 };

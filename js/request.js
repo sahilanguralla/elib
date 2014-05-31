@@ -22,16 +22,16 @@ function createRequest(){
     return request;
 }
 
-function sendRequest(par,file,response){
-    if(request.readyState==0 || request.readyState==4){
+function sendRequest(id,par,file,response){
+    if(request.readyState===0 || request.readyState===4){
         request.open("POST",file,true);
         request.onreadystatechange=function(){
-            if(request.readyState==4){
-                if(request.status==200){
+            if(request.readyState===4){
+                if(request.status===200){
                     response(request.responseText);
                 }
                 else
-                    notify("Something went wrong!");
+                    notify(id,"Something went wrong!","warning");
             }
         };
         request.send(par);
