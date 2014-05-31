@@ -1,0 +1,193 @@
+TSS SERVER DOCS::
+: SERVER NAME IN ANOTHER LANG
+: ENCRYPTION
+: USER RIGHTS
+: FILE RIGHTS	
+: REGISTRATION SECTION
+: LOGIN
+: FILE HANDLING
+: MEDIA PLAYER
+: USER LOG FILE
+: REPORT BUG
+: DOWNLOAD MANAGER
+: SUGGESTIONS
+
+ ---ENCRYPTION---
+$a = md5($string);
+$b = append special chars ($ϵ®ʌϵ®)in $a
+$final =sha1($b);
+-----------------------------------------------
+
+---USER RIGHTS---
+.login rights
+	.0 - not allowed to login
+	.1 - allowed to login but multiple login not allowed
+	.2 - multiple login allowed
+
+.account rights
+	.0 - allowed to view account details
+	.1 - allowed to edit account details
+	.2 - allowed to view other simple users accounts
+	.3 - allowed to view private accounts
+	.4 - allowed to add new simple accounts
+	.5 - allowed to add/promote new private accounts
+	.6 - allowed to manage accounts manager
+
+.view/download software rights
+	.0 - allowed to view/download public files
+	.1 - allowed to view/download some private files (selected by admin)
+	.2 - allowed to view/download all files
+
+.view/download books rights
+	.0 - allowed to view/download public files
+	.1 - allowed to view/download some private files (selected by admin)
+	.2 - allowed to view/download all files
+
+.view/download videos rights
+	.0 - allowed to view/download public files
+	.1 - allowed to view/download some private files (selected by admin)
+	.2 - allowed to view/download all files
+
+.upload rights
+	.0 - not allowed to upload any file
+	.1 - allowed to request for file uploading
+	.2 - allowed to upload but later on verified by admin
+	.3 - allowed to upload files
+
+.project hosting 
+	.0 - only allowed to view hosted projects
+	.1 - allowed to request for project hosting
+	.2 - allowed to upload but verification later on
+	.3 - allowed to upload project
+
+.course rights
+	.0 - allowed to join public courses
+	.1 - allowed to request to join special course
+	.2 - allowed to join all courses  
+
+.video watching rights
+ 	.0 - allowed to watch all videos without seeking
+ 	.1 - allowed to seek current
+ 	.2 - allowed to skip current video
+ 	.3 - allowed to skip to test
+
+Default Rights
+public - 121111113
+private - 120001110
+------------------------------------------------------
+---FILE RIGHTS---
+ 	.0 - no one allowed to view file
+ 	.1 - declared as private file
+ 	.2 - declared as public file
+ 	.3 - allowed to edit by private owners
+ 	.4 - allowed to edit by public
+ 	.5 - allowed to delete files
+
+------------------------------------------------------
+---registration---
+ .details
+ 	-full name
+ 	-username
+ 		-minimum 6 chars max 30 chars
+ 		-"_" or "." allowed but only once
+ 		-username verified while typing(using ajax request with javascript onkeyup event)
+ 	-password
+ 		-atleast six atmost 100
+ 		-all special chars
+ 		-password strength meter
+ 	-confirm password
+ 		-javascript
+ 	-department
+ 		-Drop down list
+ 	-Official Roll No.
+ 		-verified using javascript using regex
+ 	-Email and Phone number
+ 	-Terms and conditions
+ 	-captcha
+
+ ------------------------------------------------------
+---LOGIN---
+.Forgot Password feature
+ Working - User requests forgot password and a private member called "accounts manager" recieves his request. He then generates a pin of 10 characters and saves the pin in user's "recovery" column and sends a copy to user's email address. Using this pin user can reset his password.
+--------------------------------------------------------
+----FILE HANDLING-----
+	-warn admin to delete files according to free space
+	-required details
+		-file 
+		-name
+		-type
+		-Author
+		-Publisher
+		-category
+		-edition/version(software)
+		-year
+		-description
+	-check file already exists
+	-catergories
+		-books
+			-Novels
+			-University books
+				-department wise
+			-Journals
+			-magazines
+			-programming
+		-softwares
+			-refer to local server doc file on sahil lappy
+		-videos
+			-tutorials
+			-video course
+		-projects
+			-official projects
+		-Documents
+			-TSS classified files
+			-reports
+---------------------------------------------------------
+----Media Player----	
+	- HTML5 media player
+	- tracking of video using jquery 
+	- disable video seeking
+---------------------------------------------------------
+----USER LOG FILE----
+	-files downloaded
+		-php script that restricts file download without login and also keeps track if file was succesfully downloaded. when download complets users log is updated.
+	-changes carried out by users in their account
+---------------------------------------------------------
+----REPORT BUG----
+	-report a bug by sending it's details or by sending error code to admin
+---------------------------------------------------------
+----DOWNLOAD MANAGER----
+	-to be discused later on 
+---------------------------------------------------------
+----SUGGESTIONS/discussion forum----
+	-framework
+---------------------------------------------------------
+
+
+Columns in users table
+1. id
+2. username
+3. password (encrypted)
+4. private
+5. email
+6. phone
+7. rights
+8. recovery
+9. creator
+10. toc
+
+columns in uploads/Downloads table
+0. status
+1. id
+2. filename
+3. size
+4. type
+5. Author
+6. Publisher
+7. category
+8. edition/version(software)
+9. year
+10. description
+11. no. of Downloads
+12. course
+13. uploader
+14. tou
