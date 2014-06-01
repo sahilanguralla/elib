@@ -46,7 +46,7 @@ class register{
     }
     
     private function validate(){
-		$nameVal="/^\a+$/";
+		$nameVal="/^\a+([\.\-]\a+)*$/";
 		$fnameVal="/^\a+( \a+)*$/";
 		$passwordVal="/^.{5}.+$/";
 		$deptVal="/^\a{3}\a*$/";

@@ -3,15 +3,15 @@ function login(form){
     var pass=form["password"].value;
     var rem=form["remember"].checked;
     var par="user="+user+"&pass="+pass+"&rem="+rem;
-    var dest="includes/register.inc.php";
+    var dest="includes/login.inc.php";
     sendRequest("loginNote",par,dest,loginResponse);
 }
 
 var loginResponse=function(response){
     if(response==="true"){
         notify("loginNote","Login Successful!","success");
-        window.reload();
+        window.location.reload();
     }
     else
-        notify("registerNote",response,"warning");
+        notify("loginNote",response,"warning");
 };

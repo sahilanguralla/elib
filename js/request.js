@@ -25,10 +25,11 @@ function createRequest(){
 function sendRequest(id,par,file,response){
     if(request.readyState===0 || request.readyState===4){
         request.open("POST",file,true);
+        request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         request.onreadystatechange=function(){
             if(request.readyState===4){
                 if(request.status===200){
-                    response(request.responseText);
+                    response(request.responseText.trim());
                 }
                 else
                     notify(id,"Something went wrong!","warning");

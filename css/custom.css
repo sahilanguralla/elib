@@ -131,3 +131,7 @@ background-image: linear-gradient(to bottom, #F0F5ED 0%, #FFFFFF 100%);
 .note{
     margin-top:10px;
 }
+
+.margin-bottom0{
+    margin-bottom:0px !important;
+}
