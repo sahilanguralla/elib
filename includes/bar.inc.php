@@ -146,15 +146,14 @@
 					    </div>
 			      </div>
 			      <div class="row">
-			      	<div class="col-md-6">
+			      	<div class="col-md-5">
 			      		<label for="registerCaptcha">Prove that you are a human :</label>
 				      	<div id="registerCaptcha">
-					      	<?php
-						      	require_once('includes/recaptchalib.inc.php');
-									  $publickey = "6LeKD_QSAAAAALl-_7TKizKlV3jF6-g2IDXE-oJZ"; // you got this from the signup page
-									  echo recaptcha_get_html($publickey);
-									?>
-								</div>
+                                            <div class="panel panel-default">
+  <div class="panel-body" style="padding:0px">
+                                            <img src="includes/displayCaptcha.inc.php"><button type="button" class="btn btn-default" style="margin-left:5px"><span class="glyphicon glyphicon-refresh" ></span></button>
+  </div></div>		</div>
+                                        <input type="text" placeHolder="Captcha goes here..." class="form-control" name="captcha" id="registerCaptcha" maxLength="5">
 							</div>
 			      </div>
 			      <div class="checkbox">

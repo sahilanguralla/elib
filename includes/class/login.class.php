@@ -49,7 +49,7 @@ class login{
 			return true;
 		}
 		else{
-            $_SESSION['error']['login']="Error Code U2 : Internal Server Error!";
+            $_SESSION['error']['login']="Invalid Username/Password combination!";
 			return false;
         }
 	}

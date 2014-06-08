@@ -6,7 +6,7 @@ if(isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['rem'])){
     $rem=$_POST['rem'];
     require_once "class/login.class.php";
     require_once "class/hash.class.php";
-    $mysqli=new mysqli("localhost","tss_server","magnanimous","tss_server");
+    $mysqli=new mysqli("localhost","tssgndu_lib","tsslibrary","tssgndu_lib");
     if($mysqli->connect_errno){
         die("Error Code L0 : Internal Server error!");
     }

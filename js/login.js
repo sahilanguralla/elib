@@ -13,5 +13,5 @@ var loginResponse=function(response){
         window.location.reload();
     }
     else
-        notify("loginNote",response,"warning");
+        notify("loginNote",response,"danger");
 };

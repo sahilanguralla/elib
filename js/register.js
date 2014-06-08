@@ -9,7 +9,7 @@ function register(form){
     var dept=form["dept"].value;
     var phone=form["phone"].value;
     var terms=form["terms"].checked;
-    var par="user="+user+"&fname="+fname+"&pass="+pass+"&confpass="+confpass+"&email="+email+"&confemail="+confemail+"&rno="+rno+"&dept="+dept+"&phone="+phone+"&terms="+terms;
+    var par="user="+user+"&fname="+fname+"&pass="+pass+"&confPass="+confpass+"&email="+email+"&confEmail="+confemail+"&rno="+rno+"&dept="+dept+"&phone="+phone+"&terms="+terms;
     var dest="includes/register.inc.php";
     sendRequest("registerNote",par,dest,registerResponse);
 }
