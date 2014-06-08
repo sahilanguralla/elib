@@ -7,6 +7,8 @@ class captcha{
     function __construct($type) {
         $this->captchaText=$this->generateCaptchaTextMarkovClean(5);
         $this->type=$type;
+        
+        $_SESSION['captcha'][$type]=$this->captchaText;
     }
      
     function generateImage(){
@@ -175,10 +177,14 @@ class captcha{
     }
     
     static function verifyCaptcha($type, $text){
-        if(isset($_SESSION['captcha'][$type]) && $text==$_SESSION['captcha'][$type])
+        if(isset($_SESSION['captcha'][$type]) && $text==$_SESSION['captcha'][$type]){
+            unset($_SESSION['captcha'][$type]);
             return true;
-        else
+        }
+        else{
+            unset($_SESSION['captcha'][$type]);
             return false;
+        }
     }
 }
 

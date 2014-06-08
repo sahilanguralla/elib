@@ -125,7 +125,7 @@
 				  			</div>
 				  			<div class="col-md-6">
 					        <label for="registerConfEmail">Confirm E-Mail Address</label>
-					        <input class="form-control" name="confirmEmail" id="registerConfEmail" type="text">
+					        <input class="form-control" name="confirmEmail" id="registerConfEmail" type="text" autocomplete="off">
 				  			</div>
 				  		</div>
 			      </div>
@@ -150,9 +150,11 @@
 			      		<label for="registerCaptcha">Prove that you are a human :</label>
 				      	<div id="registerCaptcha">
                                             <div class="panel panel-default">
-  <div class="panel-body" style="padding:0px">
-                                            <img src="includes/displayCaptcha.inc.php"><button type="button" class="btn btn-default" style="margin-left:5px"><span class="glyphicon glyphicon-refresh" ></span></button>
-  </div></div>		</div>
+                                              <div class="panel-body" style="padding:0px">
+                                                <img id="captchaImage" src="includes/displayCaptcha.inc.php"><button type="button" id="reloadCaptcha" class="btn btn-default" style="margin-left:5px"><span class="glyphicon glyphicon-refresh" ></span></button>
+                                              </div>
+                                            </div>
+                                        </div>
                                         <input type="text" placeHolder="Captcha goes here..." class="form-control" name="captcha" id="registerCaptcha" maxLength="5">
 							</div>
 			      </div>

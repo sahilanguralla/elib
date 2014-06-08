@@ -1,9 +1,8 @@
-<?php include "includes/header.inc.php";?>
+<?php
+include "includes/header.inc.php";
+session_start();
+?>
   <link rel="stylesheet" href="css/custom.css"/>
-  <script type="text/javascript" src="js/request.js"></script>
-  <script type="text/javascript" src="js/register.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/home.js"></script>
   <title>Library Home | Technical Student Society Library</title>
 </head>
 <body>
